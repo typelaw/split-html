@@ -107,10 +107,12 @@
       $wrapper = cheerio.load('<div></div>')('div').eq(0);
       $match.removeAttr(splitAttr);
       $wrapper.append($match);
+      $wrapper.html(reopen + $wrapper.html());
       tag = $wrapper.html();
       $match.remove();
       markup = $.html();
       second = reopen + markup.substr(leftAt);
+      // tag = reopen + tag;
       // Let Cheerio close the open tags in the
       // first segment for us. Also mop up the attributes
       // we used to mark elements that matched the selector
